@@ -28,13 +28,10 @@ class DynamicArray {
   unshift(val) {
 
     // Your code here
-    this.data[0] = val;
-      for(let i = 1; i < this.data.length; i++){
-        this.data[i] = null;
-        if(this.data[i] == null){
-          this.data[i] = this.data[i-1];
-        }
+    for(let i = 1; i <= this.data.length-1; i++){
+      this.data[i+1] = this.data[i];
     }
+    this.data[0] = val;
     console.log(this.data)
   this.length++;
 
